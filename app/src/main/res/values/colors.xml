@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <resources>
+        <color name="colorPrimary">#B2EBF2</color>
+        <color name="colorPrimaryDark">#00ACC1</color>
+        <color name="colorAccent">#18FFFF</color>
+
+    <color name="fab_color">#F4511E</color>
+    <color name="name_txtView">#2B3D4D</color>
+    <color name="quantity_txtView">#AEB6BD</color>
+    </resources>
+
+

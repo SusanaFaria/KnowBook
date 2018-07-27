@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/black"
+    android:orientation="vertical"
+    android:padding="@dimen/scrollViewPadding"
+    tools:context=".BookEditor">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="@dimen/general_layout_padding">
+
+            <TextView
+                style="@style/textView_style"
+                android:text="@string/main_info" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:orientation="vertical"
+                android:paddingLeft="@dimen/general_layout_padding">
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="@dimen/view_padding">
+
+                    <android.support.design.widget.TextInputEditText
+                        android:id="@+id/edit_book_name"
+                        style="@style/textInput_editTxt_style"
+                        android:layout_width="match_parent"
+                        android:hint="@string/book_title_hint"
+                        android:inputType="textCapWords"
+                        android:maxLines="2" />
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <android.support.design.widget.TextInputEditText
+                        android:id="@+id/edit_book_author"
+                        style="@style/textInput_editTxt_style"
+                        android:layout_width="match_parent"
+                        android:hint="@string/author_hint"
+                        android:inputType="textCapWords" />
+                </android.support.design.widget.TextInputLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/edit_genre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="@dimen/general_layout_padding">
+
+            <TextView
+                style="@style/textView_style"
+                android:text="@string/genre" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="@dimen/txt_input_editTxt_height"
+                android:layout_marginBottom="@dimen/view_padding"
+                android:layout_marginLeft="@dimen/lin_lay_pading"
+                android:layout_marginRight="@dimen/view_padding"
+                android:layout_weight="2"
+                android:background="@drawable/edit_text_design"
+                android:paddingLeft="@dimen/lin_lay_pading">
+
+                <Spinner
+                    android:id="@+id/spinner_genre"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/spinner_height"
+                    android:paddingLeft="@dimen/view_padding"
+                    android:paddingRight="@dimen/view_padding"
+
+                    android:spinnerMode="dropdown" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/price"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/textView_style"
+                android:layout_marginTop="@dimen/view_padding"
+                android:text="@string/price_hint" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/general_layout_padding"
+                    android:layout_marginTop="@dimen/view_padding">
+
+                    <android.support.design.widget.TextInputEditText
+                        android:id="@+id/edit_book_price"
+                        style="@style/textInput_editTxt_style"
+                        android:layout_width="@dimen/price_editTxt_width"
+                        android:hint="@string/price_hint"
+                        android:inputType="number|numberDecimal" />
+                </android.support.design.widget.TextInputLayout>
+
+                <TextView
+                    android:id="@+id/euro_symbol"
+                    android:layout_width="@dimen/euro_symbol_dimen"
+                    android:layout_height="@dimen/euro_symbol_dimen"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerInParent="true"
+                    android:gravity="center"
+                    android:text="@string/euro_symbol"
+                    android:textColor="@android:color/white" />
+
+            </RelativeLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="@dimen/quantity_txtInput_layout_width"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/scrollViewPadding"
+                android:paddingTop="@dimen/quantity_txtInput_layout_padd">
+
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/edit_book_quantity"
+                    style="@style/textInput_editTxt_style"
+                    android:layout_width="@dimen/quantity_txtInput_EditTxt_width"
+                    android:hint="@string/quantity_hint"
+                    android:inputType="number" />
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.v7.widget.AppCompatButton
+                android:id="@+id/minus_btn"
+                style="@style/minus_plus_btn_style"
+                android:layout_marginLeft="@dimen/general_layout_padding"
+                android:layout_marginRight="@dimen/view_padding"
+                android:text="@string/minus_btn" />
+
+            <android.support.v7.widget.AppCompatButton
+                android:id="@+id/plus_btn"
+                style="@style/minus_plus_btn_style"
+                android:layout_marginLeft="@dimen/general_layout_padding"
+                android:text="@string/plus_btn" />
+
+
+        </LinearLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/scrollViewPadding"
+            android:paddingTop="@dimen/view_padding">
+
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/edit_book_supplier"
+                style="@style/textInput_editTxt_style"
+                android:layout_width="match_parent"
+                android:hint="@string/supplier_hint"
+                android:inputType="textCapWords" />
+        </android.support.design.widget.TextInputLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingBottom="@dimen/lin_lay_pading">
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="@dimen/supp_num_txtInput_layout_width"
+                android:layout_height="@dimen/supp_num_txtInput_layout_height"
+                android:layout_marginLeft="@dimen/scrollViewPadding"
+                android:paddingTop="@dimen/view_padding">
+
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/edit_book_supplier_num"
+                    style="@style/textInput_editTxt_style"
+                    android:layout_width="match_parent"
+                    android:hint="@string/supplier_num_hint"
+                    android:inputType="phone" />
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.v7.widget.AppCompatButton
+                android:id="@+id/order"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/order_btn_marg_top"
+                android:background="@drawable/button_states"
+                android:text="@string/order_btn" />
+
+
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

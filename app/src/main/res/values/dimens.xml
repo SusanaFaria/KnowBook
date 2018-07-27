@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="scrollViewPadding">12dp</dimen>
+    <dimen name="general_layout_padding">16dp</dimen>
+    <dimen name="text_size_general">16sp</dimen>
+    <dimen name="view_padding">8dp</dimen>
+    <dimen name="txt_input_editTxt_height">40dp</dimen>
+    <dimen name="zero_width_or_height">0dp</dimen>
+    <dimen name="lin_lay_pading">20dp</dimen>
+    <dimen name="spinner_height">48dp</dimen>
+    <dimen name="price_txtView_width">50dp</dimen>
+    <dimen name="price_editTxt_width">230dp</dimen>
+    <dimen name="euro_symbol_dimen">56dp</dimen>
+    <dimen name="quantity_txtInput_layout_width">180dp</dimen>
+    <dimen name="quantity_txtInput_layout_padd">32dp</dimen>
+    <dimen name="quantity_txtInput_EditTxt_width">160dp</dimen>
+    <dimen name="minus_plus_btns_mar_top">38dp</dimen>
+    <dimen name="supp_num_txtInput_layout_width">260dp</dimen>
+    <dimen name="supp_num_txtInput_layout_height">80dp</dimen>
+    <dimen name="order_btn_marg_top">14dp</dimen>
+    <dimen name="listView_divider_padding">2dp</dimen>
+    <dimen name="fab_margin">24dp</dimen>
+</resources>

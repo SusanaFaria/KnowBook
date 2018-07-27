@@ -1,0 +1,42 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <!--activity_book_editor-->
+    <style name="textView_style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">@dimen/text_size_general</item>
+    </style>
+
+    <style name="textInput_editTxt_style">
+        <item name="android:layout_height">@dimen/txt_input_editTxt_height</item>
+        <item name="android:background">@drawable/edit_text_design</item>
+        <item name="android:paddingLeft">@dimen/general_layout_padding</item>
+        <item name="android:layout_margin">@dimen/view_padding</item>
+    </style>
+
+    <style name="minus_plus_btn_style">
+        <item name="android:layout_width">@dimen/price_txtView_width</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">@dimen/minus_plus_btns_mar_top</item>
+        <item name="android:background">@drawable/button_states</item>
+        <item name="android:focusable">true</item>
+    </style>
+
+<!--listItem TextViews style-->
+    <style name="text_view_style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:fontFamily">sans-serif</item>
+
+    </style>
+
+</resources>

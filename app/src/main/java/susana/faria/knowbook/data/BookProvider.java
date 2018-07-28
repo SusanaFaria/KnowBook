@@ -85,31 +85,35 @@ public class BookProvider extends ContentProvider {
             Toast.makeText(getContext(), R.string.author_required, Toast.LENGTH_SHORT).show();
             return null;
         }
-        //no need to verify genre, it is never null because of the spinner options//
+       Integer genre = values.getAsInteger(BookEntry.COLUMN_BOOK_GENRE);
+        if (genre == null) {
+            Toast.makeText(getContext(), R.string.genre_required, Toast.LENGTH_SHORT).show();
+            return null;
+        }
 
         Double price = values.getAsDouble(BookEntry.COLUMN_BOOK_PRICE);
         if (price == null || price < 0) {
             Toast.makeText(getContext(), R.string.price_required, Toast.LENGTH_SHORT).show();
-            //don't return null, because you can come back later to add the price//
+           return null;
         }
 
         Long quantity = values.getAsLong(BookEntry.COLUMN_BOOK_QUANTITY);
         if (quantity == null || quantity < 0) {
             Toast.makeText(getContext(), R.string.quantity_required, Toast.LENGTH_SHORT).show();
-            //don't return null, because you can come back later to add the quantity//
+           return null;
         }
         String supplier = values.getAsString(BookEntry.COLUMN_SUPPLIER);
         if ((TextUtils.isEmpty(supplier))) {
             Toast.makeText(getContext(), R.string.supplier_required, Toast.LENGTH_SHORT).show();
-            //don't return null, because you can come back later to add the price//
+           return null;
         }
         Long supplier_num = values.getAsLong(BookEntry.COLUMN_SUPPLIER_NUM);
         if ((supplier_num != null && supplier_num < 0)) {
             Toast.makeText(getContext(), R.string.supplier_num_required, Toast.LENGTH_SHORT).show();
-            //don't return null, because you can come back later to add the price//
+           return null;
         }
         SQLiteDatabase database = mDbHelper.getWritableDatabase();
-        // Insert the new pet with the given values
+        // Insert the new book with the given values
         long id = database.insert(BookEntry.TABLE_NAME, null, values);
         // If the ID is -1, then the insertion failed. Log an error and return null.
         if (id == -1) {
@@ -158,30 +162,41 @@ public class BookProvider extends ContentProvider {
                 return 0;
             }
         }
-        //no need to verify genre, it is never null because of the spinner options//
+
+        if(values.containsKey(BookEntry.COLUMN_BOOK_GENRE)) {
+            Integer genre = values.getAsInteger(BookEntry.COLUMN_BOOK_GENRE);
+            if(genre == null) {
+                Toast.makeText(getContext(), R.string.genre_required, Toast.LENGTH_SHORT).show();
+                return 0;
+            }
+        }
 
         if (values.containsKey(BookEntry.COLUMN_BOOK_PRICE)) {
             Double price = values.getAsDouble(BookEntry.COLUMN_BOOK_PRICE);
             if (price == null || price < 0) {
                 Toast.makeText(getContext(), R.string.price_required, Toast.LENGTH_SHORT).show();
+                return 0;
             }
         }
         if (values.containsKey(BookEntry.COLUMN_BOOK_QUANTITY)) {
             Double quantity = values.getAsDouble(BookEntry.COLUMN_BOOK_QUANTITY);
             if (quantity == null || quantity < 0) {
                 Toast.makeText(getContext(), R.string.no_negative_values, Toast.LENGTH_SHORT).show();
+                return 0;
             }
         }
         if (values.containsKey(BookEntry.COLUMN_SUPPLIER)) {
             String supplier = values.getAsString(BookEntry.COLUMN_SUPPLIER);
             if ((TextUtils.isEmpty(supplier))) {
                 Toast.makeText(getContext(), R.string.supplier_required, Toast.LENGTH_SHORT).show();
+                return 0;
             }
         }
         if (values.containsKey(BookEntry.COLUMN_SUPPLIER_NUM)) {
             Long supplier_num = values.getAsLong(BookEntry.COLUMN_SUPPLIER_NUM);
             if ((supplier_num == null || supplier_num < 0)) {
                 Toast.makeText(getContext(), R.string.supplier_num_required, Toast.LENGTH_SHORT).show();
+                return 0;
             }
         }
         if (values.size() == 0) {

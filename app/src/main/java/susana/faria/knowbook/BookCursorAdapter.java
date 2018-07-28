@@ -29,11 +29,11 @@ public class BookCursorAdapter extends CursorAdapter {
     @Override
     public void bindView(View view, final Context context, final Cursor cursor) {
         // Find fields to populate in inflated template
-        TextView book_name = (TextView) view.findViewById(R.id.name);
-        TextView book_author = (TextView) view.findViewById(R.id.summary);
-        TextView book_quantity = (TextView) view.findViewById(R.id.quantity_display);
-        TextView book_price = (TextView) view.findViewById(R.id.price_display);
-        final Button sale_btn = (Button) view.findViewById(R.id.sale_button);
+        TextView book_name = view.findViewById(R.id.name);
+        TextView book_author = view.findViewById(R.id.summary);
+        TextView book_quantity = view.findViewById(R.id.quantity_display);
+        TextView book_price = view.findViewById(R.id.price_display);
+        final Button sale_btn = view.findViewById(R.id.sale_button);
 
         //find the columns of book attributes we're interested in//
         int nameColumnIndex = cursor.getColumnIndex(BookEntry.COLUMN_BOOK_NAME);

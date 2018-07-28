@@ -4,6 +4,7 @@
     <!--BookProvider Strings for toasts-->
     <string name="name_required">A name is required for the book</string>
     <string name="author_required">Author name is required</string>
+    <string name="genre_required">A genre is required</string>
     <string name="price_required">Valid Price is required</string>
     <string name="quantity_required">Valid Quantity is required</string>
     <string name="supplier_required">Supplier name is required</string>

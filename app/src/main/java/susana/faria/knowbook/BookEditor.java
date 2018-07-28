@@ -25,6 +25,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
+
 import java.util.Locale;
 
 import susana.faria.knowbook.data.BookContract.BookEntry;
@@ -68,9 +69,9 @@ public class BookEditor extends AppCompatActivity implements LoaderManager.Loade
 
         Intent bookEdit = getIntent();
         mCurrentBookUri = bookEdit.getData();
-        mPlusButton = (Button) findViewById(R.id.plus_btn);
-        mMinusButton = (Button) findViewById(R.id.minus_btn);
-        mOrderButton = (Button) findViewById(R.id.order);
+        mPlusButton = findViewById(R.id.plus_btn);
+        mMinusButton = findViewById(R.id.minus_btn);
+        mOrderButton = findViewById(R.id.order);
 
         if (mCurrentBookUri == null) {
             setTitle("Add a Book");
@@ -85,13 +86,13 @@ public class BookEditor extends AppCompatActivity implements LoaderManager.Loade
         }
 
         // Find all relevant views that we will need to read user input from
-        mBookNameEditText = (EditText) findViewById(R.id.edit_book_name);
-        mBookAuthorEditText = (EditText) findViewById(R.id.edit_book_author);
-        mBookGenreSpinner = (Spinner) findViewById(R.id.spinner_genre);
-        mBookPriceEditText = (EditText) findViewById(R.id.edit_book_price);
-        mBookQuantityEditText = (EditText) findViewById(R.id.edit_book_quantity);
-        mBookSupplierEditText = (EditText) findViewById(R.id.edit_book_supplier);
-        mBookSupplierNumEditText = (EditText) findViewById(R.id.edit_book_supplier_num);
+        mBookNameEditText = findViewById(R.id.edit_book_name);
+        mBookAuthorEditText = findViewById(R.id.edit_book_author);
+        mBookGenreSpinner = findViewById(R.id.spinner_genre);
+        mBookPriceEditText = findViewById(R.id.edit_book_price);
+        mBookQuantityEditText = findViewById(R.id.edit_book_quantity);
+        mBookSupplierEditText = findViewById(R.id.edit_book_supplier);
+        mBookSupplierNumEditText = findViewById(R.id.edit_book_supplier_num);
 
         mBookNameEditText.setOnTouchListener(mTouchListener);
         mBookAuthorEditText.setOnTouchListener(mTouchListener);
